@@ -1,12 +1,25 @@
+html,
 body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
   font-family: Arial, sans-serif;
-  text-align: center;
-  margin: 50px;
+}
+
+.wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
 }
 
 .container {
-  max-width: 500px;
-  margin: 0 auto;
+  width: 500px;
+  height: fit-content;
+  text-align: center;
+  margin: auto 0;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -15,7 +28,8 @@ body {
 
 button {
   width: 100%;
-  padding: 10px;
+  padding: 14px;
+  font-size: 16px;
   margin-top: 10px;
   border: none;
   cursor: pointer;
@@ -37,6 +51,21 @@ button:hover {
   background: #d0e7ff;
 }
 
+#resetUpload {
+  background: none;
+  margin-top: 0px;
+  font-size: 14px;
+}
+
+#resetUpload:hover {
+  text-decoration: underline;
+}
+
+#downloadExcel {
+  background: #03ac48;
+  color: white;
+}
+
 .hidden {
   display: none;
 }
@@ -48,4 +77,53 @@ button:hover {
   border: 1px solid #ccc;
   background: #ffffff;
   border-radius: 5px;
+}
+a {
+  text-decoration: none;
+}
+
+#guide {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border-radius: 100px;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+#guide:hover {
+  background-color: #464646;
+}
+
+.wrapper-guide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-guide {
+  background-color: #d0e7ff;
+  width: 700px;
+  height: 100%;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.box-guide {
+  width: 100%;
+}
+
+.box-guide > img {
+  width: 100%;
+}
+
+.title-guide {
+  margin-bottom: 30px;
+  text-align: center;
+  color: #016de0;
 }

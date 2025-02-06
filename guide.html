@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>댓글 DATA EXCEL | 가이드</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper-guide">
+      <div class="container-guide">
+        <h1 class="title-guide">댓글 JSON 파일 저장 가이드</h1>
+        <div class="box-guide">
+          <h2>1. 크롬 > 개발자도구(F12) NETWORK 탭 열기</h2>
+          <h3>댓글을 추출하고자 하는 페이지에서 열어줍니다.</h3>
+          <img src="/images/guide1.png" alt="guide" />
+        </div>
+        <div class="box-guide">
+          <h2>2. 검색창에 comment를 치고, Fetch/XHR 탭 누른 후 새로고침</h2>
+          <h3></h3>
+          <img src="/images/guide2.png" alt="guide" />
+        </div>
+        <div class="box-guide">
+          <h2>
+            3. 개발자도구를 유지한 상태에서 추출하고자 하는 댓글 페이지 모두
+            클릭
+          </h2>
+          <img src="/images/guide3.png" alt="guide" />
+        </div>
+        <div class="box-guide">
+          <h2>4. Preview 탭에서 오른쪽 마우스 Copy Value 하여 데이터 복사</h2>
+          <h3></h3>
+          <img src="/images/guide4.png" alt="guide" />
+        </div>
+        <div class="box-guide">
+          <h2>5. 메모장에 붙여넣고 원하는이름.json 으로 저장</h2>
+          <h3>처음 부분이 { "result":{ 로 시작해야합니다.</h3>
+          <img src="/images/guide5.png" alt="guide" />
+        </div>
+        <div class="box-guide">
+          <h2>6. 댓글 페이지 별 반복하여 json 파일 저장</h2>
+          <h3></h3>
+          <img src="/images/guide6.png" alt="guide" />
+        </div>
+      </div>
+      <a
+        href="/"
+        id="guide"
+        style="left: 20px; right: auto; background-color: rgb(36, 78, 244)"
+        >HOME</a
+      >
+    </div>
+    <input
+      type="file"
+      id="jsonFileInput"
+      accept=".json"
+      multiple
+      class="hidden"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

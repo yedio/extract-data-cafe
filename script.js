@@ -19,19 +19,12 @@ dropZone.addEventListener("dragleave", () =>
 dropZone.addEventListener("drop", handleDrop);
 dropZone.addEventListener("click", () => fileInput.click());
 
-// 📌 파일 선택 시 처리
 fileInput.addEventListener("change", (e) => handleFileUpload(e.target.files));
 
-// 📌 추출하기 버튼 클릭 시 데이터 추출
 extractButton.addEventListener("click", extractDataFromFiles);
-
-// 📌 엑셀 다운로드 버튼 클릭 시 엑셀 다운로드
 downloadButton.addEventListener("click", downloadExcel);
-
-// 📌 다시 업로드 버튼 클릭 시 초기화
 resetButton.addEventListener("click", resetUpload);
 
-// 📌 파일 업로드 후 UI 업데이트
 function updateUI() {
   dropZone.classList.add("hidden");
   fileListContainer.classList.remove("hidden");
@@ -43,7 +36,6 @@ function updateUI() {
     .join("");
 }
 
-// 📌 파일을 업로드하면 배열에 저장만 하고, 추출 버튼을 눌러야 처리됨
 function handleFileUpload(files) {
   if (files.length === 0) return;
 
@@ -53,14 +45,12 @@ function handleFileUpload(files) {
   updateUI();
 }
 
-// 📌 파일 드래그 앤 드롭 시 처리
 function handleDrop(event) {
   event.preventDefault();
   dropZone.classList.remove("active");
   handleFileUpload(event.dataTransfer.files);
 }
 
-// 📌 JSON 데이터 추출
 function extractDataFromFiles() {
   if (fileOrder.length === 0) {
     alert("먼저 JSON 파일을 업로드하세요.");
@@ -85,6 +75,7 @@ function extractDataFromFiles() {
             `데이터 추출 완료! 총 ${extractedData.length}개의 항목이 있습니다.`
           );
           downloadButton.classList.remove("hidden");
+          extractButton.classList.add("hidden");
         }
       }
     };
@@ -101,7 +92,6 @@ function extractData(jsonData) {
   ]);
 }
 
-// 📌 엑셀 다운로드
 function downloadExcel() {
   if (extractedData.length === 0) {
     alert("먼저 데이터를 추출하세요.");
@@ -115,7 +105,6 @@ function downloadExcel() {
   XLSX.writeFile(workbook, "extracted_data.xlsx");
 }
 
-// 📌 업로드 초기화
 function resetUpload() {
   extractedData = [];
   fileOrder = [];
