@@ -9,9 +9,22 @@
   <body>
     <div class="container">
       <h2>JSON 파일 업로드</h2>
-      <input type="file" id="jsonFileInput" accept=".json" />
-      <button id="downloadExcel">엑셀 다운로드</button>
+      <div id="dropZone">
+        여기로 JSON 파일을 드래그 앤 드롭하거나 클릭하세요
+      </div>
+      <div id="fileList" class="hidden"></div>
+      <button id="extractData" class="hidden">추출하기</button>
+      <button id="downloadExcel" class="hidden">엑셀 다운로드</button>
+      <button id="resetUpload" class="hidden">다시 업로드하기</button>
     </div>
+    <input
+      type="file"
+      id="jsonFileInput"
+      accept=".json"
+      multiple
+      class="hidden"
+    />
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="script.js"></script>
   </body>

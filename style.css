@@ -5,7 +5,7 @@ body {
 }
 
 .container {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 20px;
   border: 1px solid #ccc;
@@ -13,20 +13,39 @@ body {
   background: #f9f9f9;
 }
 
-input,
 button {
-  margin: 10px 0;
-  padding: 10px;
   width: 100%;
-}
-
-button {
-  background-color: #007bff;
-  color: white;
+  padding: 10px;
+  margin-top: 10px;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3;
+  opacity: 0.8;
+}
+
+#dropZone {
+  border: 2px dashed #007bff;
+  padding: 50px; /* 높이 증가 */
+  margin-top: 10px;
+  background: #f0f8ff;
+  cursor: pointer;
+}
+
+#dropZone.active {
+  background: #d0e7ff;
+}
+
+.hidden {
+  display: none;
+}
+
+#fileList {
+  margin-top: 20px;
+  text-align: left;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: #ffffff;
+  border-radius: 5px;
 }
